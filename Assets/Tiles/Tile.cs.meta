@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 45a8f8fb898822740a255cde9bc7c47e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - tower: {fileID: 1326093064322132, guid: c59dedfb357110d4199ea1b15b25f456, type: 3}
+  - hoverMat: {fileID: 2100000, guid: 4892cc3d27c42044d84500ba6a12c73e, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
