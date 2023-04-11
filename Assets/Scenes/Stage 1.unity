@@ -5227,6 +5227,10 @@ PrefabInstance:
       propertyPath: textMeshPro
       value: 
       objectReference: {fileID: 1425871528}
+    - target: {fileID: 8758588860620588315, guid: 01ca8f7c644f7b245819cc1e522909b0, type: 3}
+      propertyPath: initialBalance
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01ca8f7c644f7b245819cc1e522909b0, type: 3}
 --- !u!1001 &1278453448
