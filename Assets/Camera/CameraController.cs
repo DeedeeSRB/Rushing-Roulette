@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class CameraController : MonoBehaviour
 {
@@ -33,6 +32,7 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        // TODO: Turn of camera controls when gameover/pause
         //if (GameManager.GameIsOver)
         //{
         //    this.enabled = false;

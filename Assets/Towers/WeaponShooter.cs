@@ -26,7 +26,8 @@ public class WeaponShooter : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation, transform);
+        // TODO: Create bullet object pool
+        GameObject bulletGO = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation, transform);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
         firePoint.GetComponentInChildren<ParticleSystem>().Play();

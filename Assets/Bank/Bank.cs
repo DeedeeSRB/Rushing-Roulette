@@ -11,6 +11,7 @@ public class Bank : MonoBehaviour
 
     void Awake()
     {
+        // TODO: Initialize text properly to initialBalance
         currentBalance = initialBalance;
     }
 
