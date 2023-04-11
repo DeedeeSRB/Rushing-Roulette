@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    [SerializeField] GameObject tower;
     [SerializeField] Color hoverColor;
     [SerializeField] Mesh placedMesh;
 
