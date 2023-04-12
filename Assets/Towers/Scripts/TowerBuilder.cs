@@ -32,6 +32,7 @@ public class TowerBuilder : MonoBehaviour
     {
         GameObject tower = TowerPicker.PickedTower.tower;
         Vector3 spawnPos = new Vector3(tileTransform.position.x, tileTransform.position.y + 0.8f, tileTransform.position.z);
+        // TODO: Instead of instantianting the tower, take it from the tower pool
         Instantiate(tower, spawnPos, Quaternion.identity, tileTransform);
     }
 }
