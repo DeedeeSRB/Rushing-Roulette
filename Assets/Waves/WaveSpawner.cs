@@ -11,6 +11,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] Wave[] waves;
 
     [Space][SerializeField] Transform spawnPoint;
+    public Transform SpawnPoint { get { return spawnPoint; } }
 
     [Header("Countdown")]
     [SerializeField][Range(0.1f, 5f)] float initialCountdown = 2f;
@@ -40,6 +41,7 @@ public class WaveSpawner : MonoBehaviour
         if (EnemiesAlive > 0 || !isNextWaveReady) return;
         if (waveIndex == waves.Length)
         {
+            // TODO: Win level
             //gameManager.WinLevel();
             this.enabled = false;
             return;
@@ -59,6 +61,7 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
+        // TODO: Add to player stats
         //PlayerStats.Rounds++;
         isNextWaveReady = false;
         Wave wave = waves[waveIndex];
@@ -127,8 +130,6 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(GameObject enemy)
     {
         EnableObjectInPool();
-        //enemy.SetActive(true);
-        //Instantiate(enemy, enemyObjectPool.transform);
     }
 
     void EnableObjectInPool()
