@@ -1099,6 +1099,7 @@ GameObject:
   - component: {fileID: -4641994972612549419}
   - component: {fileID: -3993307681645230187}
   - component: {fileID: 6024747146004791752}
+  - component: {fileID: -3541676792839441990}
   m_Layer: 0
   m_Name: Boximon Fiery 1
   m_TagString: Enemy
@@ -1205,6 +1206,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 0
+--- !u!65 &-3541676792839441990
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975194375736644}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1992369794795074
 GameObject:
   m_ObjectHideFlags: 0
