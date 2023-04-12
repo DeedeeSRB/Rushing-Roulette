@@ -176,8 +176,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4079118292684216}
   - component: {fileID: 95382778294392932}
-  - component: {fileID: 4963777786490347823}
-  - component: {fileID: 6096385970088147512}
   m_Layer: 0
   m_Name: Meshtint Free Knight 1
   m_TagString: Enemy
@@ -207,7 +205,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &95382778294392932
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -224,36 +222,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4963777786490347823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022148595836406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59fd598b122cc1d469c7bdcacd6ee2a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startSpeed: 10
-  speed: 0
-  startHealth: 150
-  worth: 100
---- !u!114 &6096385970088147512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022148595836406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6cb1aed56442b44817cf67e6c0c8e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  path: []
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1087546517206048
 GameObject:
   m_ObjectHideFlags: 0
