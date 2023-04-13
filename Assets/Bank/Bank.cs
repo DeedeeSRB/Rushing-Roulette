@@ -14,7 +14,7 @@ public class Bank : MonoBehaviour
         // TODO: Initialize text properly to initialBalance
         currentBalance = initialBalance;
     }
-
+//yes
     public void Deposit(int amount) {
         currentBalance += Mathf.Abs(amount);
         UpdateDisplay();

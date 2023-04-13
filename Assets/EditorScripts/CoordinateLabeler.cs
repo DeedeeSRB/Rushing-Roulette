@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-[ExecuteAlways]
+//[ExecuteAlways]
 [RequireComponent(typeof(TextMeshPro))]
 public class CoordinateLabeler : MonoBehaviour
 {

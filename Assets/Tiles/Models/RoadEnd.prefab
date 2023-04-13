@@ -194,6 +194,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coordiante Labeler
       objectReference: {fileID: 0}
+    - target: {fileID: 628973589054315119, guid: 485c6dc42a233aa4fb0e19e5ab838e74, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 838941972295209896, guid: 485c6dc42a233aa4fb0e19e5ab838e74, type: 3}
       propertyPath: m_fontColor.b
       value: 0.5
