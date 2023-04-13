@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scenes/MainMenuUSS/buttons.uss?fileID=7433441132597879392&amp;guid=be3d8dd8ceaef034d839be3c29636683&amp;type=3#buttons" />
+    <ui:VisualElement focusable="false" style="flex-grow: 1; align-items: center; justify-content: center; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgba(0, 0, 0, 0.91); border-right-color: rgba(0, 0, 0, 0.91); border-top-color: rgba(0, 0, 0, 0.91); border-bottom-color: rgba(0, 0, 0, 0.91); background-color: rgba(173, 158, 158, 0.19);">
+        <ui:Label text=" RUSHING ROULETTE" display-tooltip-when-elided="true" style="height: 52px; width: 223px; -unity-text-align: middle-center; -unity-font: url(&apos;project://database/Assets/AssetPacks/TextMesh%20Pro/Fonts/Tilt_Prism/TiltPrism-Regular-VariableFont_XROT,YROT.ttf?fileID=12800000&amp;guid=9388363c54ac45b48b2cde3c243c8dab&amp;type=3#TiltPrism-Regular-VariableFont_XROT,YROT&apos;); -unity-font-definition: initial; color: rgb(29, 77, 16); -unity-font-style: bold; font-size: 20px; align-items: center; justify-content: flex-start; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 0; border-bottom-right-radius: 0; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0);" />
+        <ui:Button text="PLAY" display-tooltip-when-elided="true" name="play-button" class="button-style" />
+        <ui:Button text="SETTINGS" display-tooltip-when-elided="true" name="settings-button" class="button-style" />
+        <ui:Button text="EXIT" display-tooltip-when-elided="true" name="exit-button" class="button-style" style="color: rgba(255, 0, 0, 255);" />
+    </ui:VisualElement>
+</ui:UXML>

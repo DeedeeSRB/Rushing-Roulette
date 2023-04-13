@@ -1,0 +1,43 @@
+.button-style {
+    width: 221px;
+    height: 46px;
+    background-color: rgba(255, 255, 255, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -unity-font: url('project://database/Assets/AssetPacks/TextMesh%20Pro/Fonts/Tilt_Prism/TiltPrism-Regular-VariableFont_XROT,YROT.ttf?fileID=12800000&guid=9388363c54ac45b48b2cde3c243c8dab&type=3#TiltPrism-Regular-VariableFont_XROT,YROT');
+    -unity-font-definition: initial;
+    white-space: nowrap;
+    -unity-font-style: bold;
+    font-size: 16px;
+    -unity-text-align: middle-center;
+    color: rgba(0, 0, 0, 255);
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
+.button-style:hover {
+    width: 221px;
+    height: 46px;
+    background-color: rgba(87, 87, 87, 0.45);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -unity-font: url('project://database/Assets/AssetPacks/TextMesh%20Pro/Fonts/Tilt_Prism/TiltPrism-Regular-VariableFont_XROT,YROT.ttf?fileID=12800000&guid=9388363c54ac45b48b2cde3c243c8dab&type=3#TiltPrism-Regular-VariableFont_XROT,YROT');
+    -unity-font-definition: initial;
+    white-space: nowrap;
+    -unity-font-style: bold;
+    font-size: 16px;
+    -unity-text-align: middle-center;
+    color: rgb(255, 255, 255);
+    -unity-background-scale-mode: stretch-to-fill;
+}
