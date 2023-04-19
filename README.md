@@ -1,3 +1,3 @@
 # Rushing-Roulette
 
-Working on my Tower Defence game
+Working on our Tower Defence game
