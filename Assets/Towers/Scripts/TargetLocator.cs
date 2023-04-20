@@ -5,58 +5,61 @@ using UnityEngine;
 public class TargetLocator : MonoBehaviour
 {
     [Header("General")]
-    [SerializeField] float range = 5f;
-    [SerializeField] float turnSpeed = 10f;
-    [SerializeField] bool alive = true;
-    [SerializeField] string enemyTag = "Enemy";
+    [SerializeField] float _range = 5f;
+    [SerializeField] float _turnSpeed = 10f;
+    [SerializeField] string _enemyTag = "Enemy";
 
-    Transform target;
-    Transform weapon;
-    WeaponShooter weaponShooter;
+    Tower _tower;
 
-    GameObject[] enemies;
-    float shortestDistance;
-    GameObject nearestEnemy;
-    float disToEnemy;
+    Transform _target;
+    Transform _weapon;
+    WeaponShooter _weaponShooter;
+
+    GameObject[] _enemies;
+    float _shortestDistance;
+    GameObject _nearestEnemy;
+    float _disToEnemy;
 
     void Start()
     {
+        _tower = gameObject.GetComponent<Tower>();
+        _weapon = transform.GetChild(0);
+        _weaponShooter = gameObject.GetComponent<WeaponShooter>();
+
         StartCoroutine(FindTarget());
-        weapon = transform.GetChild(0);
-        weaponShooter = gameObject.GetComponent<WeaponShooter>();
     }
 
     void Update()
     {
-        if (target == null) return;
+        if (_target == null) return;
 
         AimWeapon();
-        weaponShooter.TryShoot(target);
+        _weaponShooter.TryShoot(_target);
     }
 
     IEnumerator FindTarget()
     {
-        while (alive)
+        while (_tower.alive)
         {
-            enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-            shortestDistance = Mathf.Infinity;
-            nearestEnemy = null;
+            _enemies = GameObject.FindGameObjectsWithTag(_enemyTag);
+            _shortestDistance = Mathf.Infinity;
+            _nearestEnemy = null;
 
-            foreach (GameObject enemy in enemies)
+            foreach (GameObject enemy in _enemies)
             {
-                disToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+                _disToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
 
-                if (disToEnemy < shortestDistance)
+                if (_disToEnemy < _shortestDistance)
                 {
-                    shortestDistance = disToEnemy;
-                    nearestEnemy = enemy;
+                    _shortestDistance = _disToEnemy;
+                    _nearestEnemy = enemy;
                 }
             }
 
-            if (nearestEnemy != null && shortestDistance <= range)
-                target = nearestEnemy.transform;
+            if (_nearestEnemy != null && _shortestDistance <= _range)
+                _target = _nearestEnemy.transform;
             else
-                target = null;
+                _target = null;
 
 
             yield return new WaitForSeconds(0.5f);
@@ -65,19 +68,19 @@ public class TargetLocator : MonoBehaviour
 
     void AimWeapon()
     {
-        if (target == null) return;
+        if (_target == null) return;
 
-        Vector3 dir = target.position - weapon.position;
+        Vector3 dir = _target.position - _weapon.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(weapon.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        weapon.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        Vector3 rotation = Quaternion.Lerp(_weapon.rotation, lookRotation, Time.deltaTime * _turnSpeed).eulerAngles;
+        _weapon.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
-        // weapon.LookAt(target); // This is very snapy
+        // _weapon.LookAt(_target); // This is very snapy
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, _range);
     }
 }

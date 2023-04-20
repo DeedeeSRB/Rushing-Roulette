@@ -161,10 +161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b40397674f9b0a4caef2e2037d964d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
-  turnSpeed: 10
-  alive: 1
-  enemyTag: Enemy
+  _range: 5
+  _turnSpeed: 10
+  _enemyTag: Enemy
 --- !u!114 &-658786878345241062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e953e0b07e63d46943f47b8fedaf66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 1
+  <Cost>k__BackingField: 100
 --- !u!1 &1414511323558576
 GameObject:
   m_ObjectHideFlags: 0

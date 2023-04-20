@@ -1,16 +1,12 @@
 using UnityEngine;
-using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable<float>, IKillable, IRewardable
 {
-    [SerializeField][Range(1f, 10f)] float startSpeed = 0.2f;
-
     [SerializeField][Range(20f, 1000f)] float startHealth = 100;
-    [ReadOnly] public float health;
+    public float Health { get; set; }
 
-    [SerializeField][Range(5f, 600f)] int worth = 5;
-    [SerializeField] ParticleSystem bleeding = null;
+    [SerializeField] ParticleSystem _bleeding;
+    [field: SerializeField] public int Worth { get; set; } = 5;
 
     // TODO: Add death effect
     // public GameObject deathEffect;
@@ -22,52 +18,42 @@ public class Enemy : MonoBehaviour
     bool isDead = false;
 
     Bank bank;
-    NavMeshAgent navMeshAgent;
 
     void Awake()
     {
         bank = FindObjectOfType<Bank>();
-        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     private void OnEnable()
     {
-        navMeshAgent.speed = startSpeed;
-        health = startHealth;
+        Health = startHealth;
         isDead = false;
-        bleeding.Stop();
+        _bleeding.Stop();
     }
 
-    public void TakeDamage(float amount)
+    public void Damage(float amount)
     {
-        health -= amount;
+        Health -= amount;
+
         // TODO: Decrease enemies health bar
         // healthBar.fillAmount = health / startHealth;
 
-        if (health <= 0 && !isDead)
+        if (Health <= 0 && !isDead)
         {
-            RewardCoin();
-            Die();
+            RewardCoin(Worth);
+            Kill();
         }
     }
 
-    public void BleedingAnim(bool bleed){
-        if(bleed == true){
-        bleeding.Play();
+    public void BleedingAnim(bool bleed)
+    {
+        if (bleed == true)
+        {
+            _bleeding.Play();
         }
     }
 
-    public void SlowDown(float pct)
-    {
-        navMeshAgent.speed = startSpeed * (1f - pct);
-    }
-
-    public void SpeedUp(float pct)
-    {
-        navMeshAgent.speed = startSpeed * (1f + pct);
-    }
-
-    public void Die()
+    public void Kill()
     {
         isDead = true;
 
@@ -80,9 +66,9 @@ public class Enemy : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    void RewardCoin()
+    public void RewardCoin(int amount)
     {
         if (bank == null) return;
-        bank.Deposit(worth);
+        bank.Deposit(amount);
     }
 }

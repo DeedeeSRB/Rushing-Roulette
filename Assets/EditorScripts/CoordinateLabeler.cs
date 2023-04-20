@@ -13,7 +13,7 @@ public class CoordinateLabeler : MonoBehaviour
     Tile tile;
 
     string prevName;
-    
+
     void Awake()
     {
         tile = GetComponentInParent<Tile>();
@@ -37,7 +37,7 @@ public class CoordinateLabeler : MonoBehaviour
 
     void ColorCooridantes()
     {
-        if (tile.IsPlaceable)
+        if (!tile.IsOccupied)
             label.color = defaultColor;
         else
             label.color = blockedColor;

@@ -30,9 +30,9 @@ public class CameraController : MonoBehaviour
     float yClamped;
     float zClamped;
 
-    void Update()
+    void FixedUpdate()
     {
-        // TODO: Turn of camera controls when gameover/pause
+        // TODO: Turn off camera controls when gameover/pause
         //if (GameManager.GameIsOver)
         //{
         //    this.enabled = false;

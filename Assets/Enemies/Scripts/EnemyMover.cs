@@ -2,9 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Enemy))]
-public class EnemyMover : MonoBehaviour
+public class EnemyMover : MonoBehaviour, ISlowable, ISpeedable
 {
+    [SerializeField][Range(1f, 10f)] public float startSpeed = 2f;
     Vector3 startPos;
     List<Transform> path = new List<Transform>();
 
@@ -26,10 +28,7 @@ public class EnemyMover : MonoBehaviour
         ResetPath();
         ReturnToStart();
         GetNextWaypoint();
-
-        if (path.Count > 0)
-            transform.LookAt(targetWaypoint.position);
-
+        ResetEnemy();
         MoveToWaypoint();
     }
 
@@ -37,6 +36,13 @@ public class EnemyMover : MonoBehaviour
     {
         if (gameObject.activeInHierarchy && path.Count > 0)
             CheckWaypoint();
+    }
+
+    void ResetEnemy()
+    {
+        if (path.Count > 0)
+            transform.LookAt(targetWaypoint.position);
+        navMeshAgent.speed = startSpeed;
     }
 
     void ResetPath()
@@ -66,15 +72,9 @@ public class EnemyMover : MonoBehaviour
         }
     }
 
-    void MoveToWaypoint()
-    {
-        navMeshAgent.destination = targetWaypoint.position;
-    }
-
     void GetNextWaypoint()
     {
-        if (path.Count < 0) return;
-        if (waypointIndex >= path.Count - 1)
+        if (path.Count < 0 || waypointIndex >= path.Count - 1)
         {
             EndPath();
             return;
@@ -82,11 +82,26 @@ public class EnemyMover : MonoBehaviour
         targetWaypoint = path[++waypointIndex];
     }
 
+    void MoveToWaypoint()
+    {
+        navMeshAgent.destination = targetWaypoint.position;
+    }
+
     void EndPath()
     {
         // TODO: Lose player health
         // PlayerStats.Lives--;
         WaveSpawner.EnemiesAlive--;
-        enemy.Die();
+        enemy.Kill();
+    }
+
+    public void SlowDown(float pct)
+    {
+        navMeshAgent.speed = startSpeed * (1f - pct);
+    }
+
+    public void SpeedUp(float pct)
+    {
+        navMeshAgent.speed = startSpeed * (1f + pct);
     }
 }
