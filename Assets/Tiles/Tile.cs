@@ -1,83 +1,66 @@
 using System.Collections;
 using UnityEngine;
 
-public class Tile : MonoBehaviour
+public class Tile : MonoBehaviour, IPlot
 {
-    [SerializeField] Color hoverColor;
-    [SerializeField] Mesh placedMesh;
+    [field: SerializeField] public bool IsOccupied { get; set; }
 
-    [SerializeField] bool isPlacable;
-    public bool IsPlaceable { get { return isPlacable; } }
+    [SerializeField] Color _hoverColor;
+    [SerializeField] public Mesh placedMesh;
+    [HideInInspector] public Transform selectionBoarder;
 
-    GameObject selectionBoarder;
-    GameObject towerObjectPool;
+    [HideInInspector] public Renderer rend;
+    [HideInInspector] public bool hovering = false;
+    [HideInInspector] public Color originalColor;
+    float _colorPct = 0;
 
-    Renderer rend;
-    Color originalColor;
-
-    float t = 0;
-    bool hovering = false;
-
-    TowerBuilder towerBuilder;
+    TowerBuilder _towerBuilder;
 
     void Awake()
     {
-        if (isPlacable) selectionBoarder = gameObject.transform.GetChild(0).gameObject;
-        towerObjectPool = GameObject.Find("TowerObjectPool");
+        selectionBoarder = transform.Find("SelectionBoarder");
         rend = GetComponent<Renderer>();
         originalColor = rend.material.color;
-        towerBuilder = FindObjectOfType<TowerBuilder>();
+        _towerBuilder = FindObjectOfType<TowerBuilder>();
     }
 
     IEnumerator ColorTile()
     {
-        t = 0;
-        while (hovering && isPlacable)
+        _colorPct = 0;
+        while (hovering && !IsOccupied)
         {
-            rend.material.color = Color.Lerp(originalColor, hoverColor, t);
-            if (t < 1)
-                t += Time.deltaTime / 0.2f;
+            rend.material.color = Color.Lerp(originalColor, _hoverColor, _colorPct);
+            if (_colorPct < 1)
+                _colorPct += Time.deltaTime / 0.2f;
             yield return new WaitForEndOfFrame();
         }
     }
 
     void OnMouseEnter()
     {
-        SetSelection(true);
+        SetSelected(true);
         StartCoroutine(ColorTile());
     }
 
     void OnMouseExit()
     {
-        SetSelection(false);
+        SetSelected(false);
         rend.material.color = originalColor;
     }
 
     void OnMouseDown()
     {
-        if (isPlacable)
-        {
-            if (towerBuilder.TryPlaceTower(transform))
-            {
-                PlaceTower();
-            }
-            else
-            {
-                // TODO: Inform user of not enough money in bank
-            }
-        }
+        TryPlaceTower();
     }
 
-    void PlaceTower()
+    public void TryPlaceTower()
     {
-        isPlacable = hovering = false;
-        rend.material.color = originalColor;
-        selectionBoarder.GetComponent<MeshFilter>().mesh = placedMesh;
+        _towerBuilder.TryPlaceTower(this);
     }
 
-    public void SetSelection(bool active)
+    public void SetSelected(bool active)
     {
         hovering = active;
-        if (selectionBoarder != null) selectionBoarder.SetActive(active);
+        if (selectionBoarder != null) selectionBoarder.gameObject.SetActive(active);
     }
 }

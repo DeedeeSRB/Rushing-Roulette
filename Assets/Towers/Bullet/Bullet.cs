@@ -48,15 +48,12 @@ public class Bullet : MonoBehaviour
 
 
 
-   public void Damage(Transform enemy)
+    public void Damage(Transform damageable)
     {
-        Enemy e = enemy.GetComponent<Enemy>();
-        Debug.Log("LoL");
+        IDamageable<float> e = damageable.GetComponent<IDamageable<float>>();
         if (e != null)
         {
-            e.TakeDamage(damage);
-            Debug.Log("BOOM");
-            e.BleedingAnim(true);
+            e.Damage(damage);
         }
     }
 }

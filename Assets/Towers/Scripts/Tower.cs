@@ -1,19 +1,24 @@
 using UnityEngine;
 
-public class Tower : MonoBehaviour
+public class Tower : MonoBehaviour, IBuyable, IPlaceable
 {
-    Tile parentTile;
-    void Start() {
-        parentTile = GetComponentInParent<Tile>();
+    [SerializeField][ReadOnly] public bool alive = true;
+    [field: SerializeField] public int Cost { get; set; } = 100;
+
+    public Tile ParentTile { get; set; }
+
+    void Start()
+    {
+        ParentTile = GetComponentInParent<Tile>();
     }
 
     void OnMouseEnter()
     {
-        parentTile.SetSelection(true);
+        ParentTile.SetSelected(true);
     }
 
     void OnMouseExit()
     {
-        parentTile.SetSelection(false);
+        ParentTile.SetSelected(false);
     }
 }
