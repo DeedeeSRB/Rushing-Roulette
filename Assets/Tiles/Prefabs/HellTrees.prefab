@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 33269907647410858}
   - component: {fileID: 23674879911427578}
   - component: {fileID: 64093157185660938}
-  - component: {fileID: 2113601671933044084}
   m_Layer: 0
   m_Name: HellTrees
   m_TagString: Untagged
@@ -183,18 +182,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: afea607c0ddd7564e84d074e1879e2b5, type: 3}
---- !u!114 &2113601671933044084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668923954984932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45a8f8fb898822740a255cde9bc7c47e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tower: {fileID: 1326093064322132, guid: c59dedfb357110d4199ea1b15b25f456, type: 3}
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  isPlacable: 0

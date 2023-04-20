@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 33145684080809946}
   - component: {fileID: 23641960132609322}
   - component: {fileID: 64377054819646068}
-  - component: {fileID: 5993858077205909939}
   m_Layer: 0
   m_Name: Village
   m_TagString: Untagged
@@ -101,22 +100,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: ec55075d188c17f409c030e2fa6d4ebf, type: 3}
---- !u!114 &5993858077205909939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233889998786750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45a8f8fb898822740a255cde9bc7c47e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tower: {fileID: 1326093064322132, guid: c59dedfb357110d4199ea1b15b25f456, type: 3}
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  placedMesh: {fileID: 0}
-  isPlacable: 0
 --- !u!1 &1895071264097466
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 33531629163291106}
   - component: {fileID: 23024402922486466}
   - component: {fileID: 64855560226938538}
-  - component: {fileID: -7154064603438986583}
   m_Layer: 0
   m_Name: DesertSkulRock
   m_TagString: Untagged
@@ -100,21 +99,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 3809834aaf39bdb45aa59310501239af, type: 3}
---- !u!114 &-7154064603438986583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323375312248932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45a8f8fb898822740a255cde9bc7c47e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tower: {fileID: 1326093064322132, guid: c59dedfb357110d4199ea1b15b25f456, type: 3}
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  isPlacable: 0
 --- !u!1 &1678059844842456
 GameObject:
   m_ObjectHideFlags: 0

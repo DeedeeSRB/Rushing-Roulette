@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 33508132450115830}
   - component: {fileID: 23188737583948832}
   - component: {fileID: 64574271583316822}
-  - component: {fileID: 8519569995504532635}
   m_Layer: 0
   m_Name: RockyEdge
   m_TagString: Untagged
@@ -183,18 +182,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 1341def1465b9ee42ab1a58327fc3676, type: 3}
---- !u!114 &8519569995504532635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841913013192508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45a8f8fb898822740a255cde9bc7c47e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tower: {fileID: 1326093064322132, guid: c59dedfb357110d4199ea1b15b25f456, type: 3}
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  isPlacable: 0
