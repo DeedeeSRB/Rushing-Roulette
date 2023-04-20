@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     [ReadOnly] public float health;
 
     [SerializeField][Range(5f, 600f)] int worth = 5;
+    [SerializeField] ParticleSystem bleeding = null;
 
     // TODO: Add death effect
     // public GameObject deathEffect;
@@ -34,12 +35,12 @@ public class Enemy : MonoBehaviour
         navMeshAgent.speed = startSpeed;
         health = startHealth;
         isDead = false;
+        bleeding.Stop();
     }
 
     public void TakeDamage(float amount)
     {
         health -= amount;
-
         // TODO: Decrease enemies health bar
         // healthBar.fillAmount = health / startHealth;
 
@@ -47,6 +48,12 @@ public class Enemy : MonoBehaviour
         {
             RewardCoin();
             Die();
+        }
+    }
+
+    public void BleedingAnim(bool bleed){
+        if(bleed == true){
+        bleeding.Play();
         }
     }
 

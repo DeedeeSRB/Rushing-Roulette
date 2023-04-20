@@ -56,6 +56,7 @@ public class Bullet : MonoBehaviour
         {
             e.TakeDamage(damage);
             Debug.Log("BOOM");
+            e.BleedingAnim(true);
         }
     }
 }
