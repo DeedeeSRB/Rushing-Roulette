@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class TargetLocator : MonoBehaviour
 {
-    [Header("General")]
-    [SerializeField] float _range = 5f;
-    [SerializeField] float _turnSpeed = 10f;
-    [SerializeField] string _enemyTag = "Enemy";
-
     Tower _tower;
+    WeaponShooter _weaponShooter;
+
+    float _range;
+    float _turnSpeed;
+    string _enemyTag = "Enemy";
 
     Transform _target;
     Transform _weapon;
-    WeaponShooter _weaponShooter;
 
     GameObject[] _enemies;
     float _shortestDistance;
@@ -23,8 +22,11 @@ public class TargetLocator : MonoBehaviour
     void Start()
     {
         _tower = gameObject.GetComponent<Tower>();
-        _weapon = transform.GetChild(0);
+        _weapon = transform.GetChild(0).GetChild(0);
         _weaponShooter = gameObject.GetComponent<WeaponShooter>();
+
+        _range = _tower.towerSO.range;
+        _turnSpeed = _tower.towerSO.turnSpeed;
 
         StartCoroutine(FindTarget());
     }

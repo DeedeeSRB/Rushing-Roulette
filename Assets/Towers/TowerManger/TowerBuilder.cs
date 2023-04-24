@@ -39,7 +39,10 @@ public class TowerBuilder : MonoBehaviour
         tile.selectionBoarder.GetComponent<MeshFilter>().mesh = tile.placedMesh;
 
         GameObject tower = TowerPicker.PickedTower;
+
         Vector3 spawnPos = new Vector3(tile.transform.position.x, tile.transform.position.y + 0.8f, tile.transform.position.z);
-        Instantiate(tower, spawnPos, Quaternion.identity, tile.transform);
+        GameObject towerGO = Instantiate(tower, spawnPos, Quaternion.identity, tile.transform);
+
+        Instantiate(tower.GetComponent<Tower>().towerSO.towerModel, spawnPos, Quaternion.identity, towerGO.transform);
     }
 }

@@ -2,37 +2,50 @@ using UnityEngine;
 
 public class WeaponShooter : MonoBehaviour
 {
+    TowerScriptableObject _towerSO;
 
-    [Header("Bullet Settings")]
-    [SerializeField] GameObject bulletPrefab;
-    [SerializeField] float fireRate = 1f;
-    float fireCountdown = 0f;
+    GameObject _bulletPrefab;
 
-    [SerializeField] GameObject firePoint;
+    int _damange;
+    float _fireRate;
+    float _projectileSpeed;
 
-    Transform target;
+    float _fireCountdown = 0f;
+    GameObject _firePoint;
+    Transform _target;
 
-    public void TryShoot(Transform _target)
+    void Start()
     {
-        target = _target;
-        if (fireCountdown <= 0f)
+        _towerSO = GetComponent<Tower>().towerSO;
+
+        _bulletPrefab = _towerSO.projectilePrefab;
+
+        _damange = _towerSO.damage;
+        _fireRate = _towerSO.fireRate;
+        _projectileSpeed = _towerSO.projectileSpeed;
+
+        _firePoint = transform.GetChild(0).Find("Turret").Find("FirePoint").gameObject;
+    }
+
+    public void TryShoot(Transform target)
+    {
+        _target = target;
+        if (_fireCountdown <= 0f)
         {
             Shoot();
-            fireCountdown = 1f / fireRate;
+            _fireCountdown = 1f / _fireRate;
         }
 
-        fireCountdown -= Time.deltaTime;
+        _fireCountdown -= Time.deltaTime;
     }
 
     void Shoot()
     {
         // TODO: Create bullet object pool
-        GameObject bulletGO = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation, transform);
+        GameObject bulletGO = Instantiate(_bulletPrefab, _firePoint.transform.position, _firePoint.transform.rotation, transform);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
-        firePoint.GetComponentInChildren<ParticleSystem>().Play();
-
-        if (bullet != null)
-            bullet.Seek(target);
+        _firePoint.GetComponentInChildren<ParticleSystem>().Play();
+        bullet.Seek(_target, _damange, _projectileSpeed);
     }
 }
