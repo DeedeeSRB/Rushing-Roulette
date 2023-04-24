@@ -4,28 +4,30 @@ using System.Collections.Generic;
 
 public class TowerPicker : MonoBehaviour
 {
+    [SerializeField] GameObject _towerPrefab;
     public static GameObject PickedTower { get; set; }
     public static int PickedTowerCost { get; set; }
 
-    [SerializeField] List<GameObject> _towers;
+    [SerializeField] List<TowerScriptableObject> _towers;
 
     int _next = 1;
 
-    void Start()
+    void Awake()
     {
-        PickedTower = _towers[0];
-        PickedTowerCost = _towers[0].GetComponent<Tower>().Cost;
+        PickedTower = _towerPrefab;
+        PickedTower.GetComponent<Tower>().towerSO = _towers[0];
+        PickedTowerCost = _towers[0].cost;
     }
 
-    void Update()
-    {
-        CycleTowers();
-    }
+    // void Update()
+    // {
+    //     CycleTowers();
+    // }
 
     public void PickTower(int tower)
     {
-        PickedTower = _towers[tower];
-        PickedTowerCost = _towers[tower].GetComponent<Tower>().Cost;
+        PickedTower.GetComponent<Tower>().towerSO = _towers[tower];
+        PickedTowerCost = _towers[tower].cost;
     }
 
     void CycleTowers()
@@ -34,8 +36,8 @@ public class TowerPicker : MonoBehaviour
         {
             if (_next == _towers.Count)
                 _next = 0;
-            PickedTower = _towers[_next];
-            PickedTowerCost = _towers[_next].GetComponent<Tower>().Cost;
+            PickedTower.GetComponent<Tower>().towerSO = _towers[_next];
+            PickedTowerCost = _towers[_next].cost;
             _next++;
         }
     }

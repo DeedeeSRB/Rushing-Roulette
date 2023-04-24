@@ -2,30 +2,32 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    Transform target;
+    Transform _target;
 
-    [SerializeField] float speed = 70f;
+    float _speed;
+    int _damage;
 
-    public int damage = 50;
-
+    // TODO: Add hit effect
     //[SerializeField] GameObject impactEffect;
 
-    public void Seek(Transform _target)
+    public void Seek(Transform target, int damage, float speed)
     {
-        target = _target;
+        _target = target;
+        _damage = damage;
+        _speed = speed;
     }
 
     void Update()
     {
 
-        if (target == null)
+        if (_target == null)
         {
             Destroy(gameObject);
             return;
         }
 
-        Vector3 dir = target.position - transform.position;
-        float distanceThisFrame = speed * Time.deltaTime;
+        Vector3 dir = _target.position - transform.position;
+        float distanceThisFrame = _speed * Time.deltaTime;
 
         if (dir.magnitude <= distanceThisFrame)
         {
@@ -34,7 +36,7 @@ public class Bullet : MonoBehaviour
         }
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-        transform.LookAt(target);
+        transform.LookAt(_target);
 
     }
 
@@ -42,18 +44,16 @@ public class Bullet : MonoBehaviour
     {
         //GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         //Destroy(effectIns, 2f);
-        Damage(target);
+        Damage(_target);
         Destroy(gameObject);
     }
-
-
 
     public void Damage(Transform damageable)
     {
         IDamageable<float> e = damageable.GetComponent<IDamageable<float>>();
         if (e != null)
         {
-            e.Damage(damage);
+            e.Damage(_damage);
         }
     }
 }

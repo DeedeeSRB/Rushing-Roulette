@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0791e8949bce2a14c8be28fe32143862, type: 3}
+  m_Name: MedivalTower1
+  m_EditorClassIdentifier: 
+  name: Medival Tower 1
+  cost: 100
+  towerModel: {fileID: 1326093064322132, guid: 2c6fbe10ca627b24cbe0b7b38bb66bf6, type: 3}
+  icon: {fileID: 21300000, guid: 828bbe4e58349784884bec999933ba06, type: 3}
+  damage: 50
+  range: 5
+  turnSpeed: 5
+  fireRate: 1
+  projectileSpeed: 15
+  projectilePrefab: {fileID: 4946876983466458659, guid: d7371a0199f40eb4aba5608ff863fb23, type: 3}

@@ -1,24 +1,23 @@
 using UnityEngine;
 
-public class Tower : MonoBehaviour, IBuyable, IPlaceable
+public class Tower : MonoBehaviour
 {
-    [SerializeField][ReadOnly] public bool alive = true;
-    [field: SerializeField] public int Cost { get; set; } = 100;
-
-    public Tile ParentTile { get; set; }
+    public TowerScriptableObject towerSO;
+    [SerializeField] public bool alive;
+    Tile _parentTile { get; set; }
 
     void Start()
     {
-        ParentTile = GetComponentInParent<Tile>();
+        _parentTile = GetComponentInParent<Tile>();
     }
 
     void OnMouseEnter()
     {
-        ParentTile.SetSelected(true);
+        _parentTile.SetSelected(true);
     }
 
     void OnMouseExit()
     {
-        ParentTile.SetSelected(false);
+        _parentTile.SetSelected(false);
     }
 }
