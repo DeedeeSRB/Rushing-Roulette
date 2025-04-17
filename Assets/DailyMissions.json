@@ -4,16 +4,28 @@
             "id": "30-nexium-ore",
             "name": "Mine 30 Nexium ore",
             "description": "Use the new hand-drill to mine nexium ores. You can find Nexium ore on astroid nearby",
-            "statisticsName": "DailyNexiumOre",
-            "target": 30,
+            "goals": {
+                "Statistics": [
+                    {
+                        "DailyNexiumOre": 30
+                    }
+                ],
+                "PlayerData": []
+            },
             "reward": 100
         },
         {
             "id": "7-rifle-unalive",
             "name": "Unalive 7 enemies with rifle",
             "description": "Use the rifle to unalive 7 enemies. You can find rifle in the armory",
-            "statisticsName": "DailyRifleUnalive",
-            "target": 7,
+            "goals": {
+                "Statistics": [
+                    {
+                        "DailyRifleUnalive": 7
+                    }
+                ],
+                "PlayerData": []
+            },
             "reward": 100
         }
     ],
@@ -21,19 +33,62 @@
         {
             "id": "try-all-edables",
             "name": "Try all edibles",
-            "description": "Try all edibles in the game. You can find them in the armory",
-            "statisticsName": "DailyTryAllEdibles",
-            "target": 1,
+            "description": "Try all edibles in the game",
+            "goals": {
+                "Statistics": [
+                    {
+                        "DailyTryAllEdibles": 1
+                    }
+                ],
+                "PlayerData": []
+            },
             "reward": 100
         }
     ],
     "2025-4-17": [
         {
-            "id": "try-all-edables",
-            "name": "Try all edibles",
-            "description": "Try all edibles in the game. You can find them in the armory",
-            "statisticsName": "DailyTryAllEdibles",
-            "target": 1,
+            "id": "try-all-gadgets",
+            "name": "Try all Gadgets",
+            "description": "Try all Gadgets in the game",
+            "goals": {
+                "Statistics": [
+                    {
+                        "DailyBatUsed": 1
+                    },
+                    {
+                        "DailyIronHandUsed": 1
+                    },
+                    {
+                        "DailyBombUsed": 1
+                    },
+                    {
+                        "DailyGrapplingHookUsed": 1
+                    },
+                    {
+                        "DailyGravityBubbleGunUsed": 1
+                    },
+                    {
+                        "DailyGuitarUsed": 1
+                    }
+                ],
+                "PlayerData": []
+            },
+            "reward": 100
+        }
+    ],
+    "2025-4-18": [
+        {
+            "id": "explore-all-astroids",
+            "name": "Explore all Astroids",
+            "description": "Explore all astroids in the game",
+            "goals": {
+                "Statistics": [
+                    {
+                        "DailyExploreAstroids": 1
+                    }
+                ],
+                "PlayerData": []
+            },
             "reward": 100
         }
     ]
