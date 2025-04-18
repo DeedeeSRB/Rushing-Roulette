@@ -30,6 +30,9 @@
                         "DailyBombUsed": 1
                     },
                     {
+                        "DailyStickyBombUsed": 1
+                    },
+                    {
                         "DailyGrapplingHookUsed": 1
                     },
                     {
