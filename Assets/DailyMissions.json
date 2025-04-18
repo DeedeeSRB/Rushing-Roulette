@@ -3,7 +3,7 @@
         {
             "id": "30-nexium-ore",
             "name": "Mine 30 Nexium ore",
-            "description": "Use the new hand-drill to mine nexium ores. You can find Nexium ore on astroid nearby",
+            "description": "Use the new hand-drill to mine 30 nexium ores. You can find Nexium ore on astroid nearby",
             "goals": {
                 "Statistics": [
                     {
@@ -15,18 +15,43 @@
             "reward": 100
         },
         {
-            "id": "7-rifle-unalive",
-            "name": "Unalive 7 enemies with rifle",
-            "description": "Use the rifle to unalive 7 enemies. You can find rifle in the armory",
+            "id": "try-all-gadgets",
+            "name": "Try all Gadgets",
+            "description": "Try all Gadgets in the game (Bat, Iron Hand, Bomb, Sticky Bomb, Grappling Hook, Gravity Bubble Gun, Guitar)",
             "goals": {
                 "Statistics": [
                     {
-                        "DailyRifleUnalive": 7
+                        "DailyBatUsed": 1
+                    },
+                    {
+                        "DailyIronHandUsed": 1
+                    },
+                    {
+                        "DailyBombUsed": 1
+                    },
+                    {
+                        "DailyGrapplingHookUsed": 1
+                    },
+                    {
+                        "DailyGravityBubbleGunUsed": 1
+                    },
+                    {
+                        "DailyGuitarUsed": 1
                     }
                 ],
                 "PlayerData": []
             },
-            "reward": 100
+            "reward": 150
+        },
+        {
+            "id": "have-fun",
+            "name": "Have fun",
+            "description": "Have fun. 😊",
+            "goals": {
+                "Statistics": [],
+                "PlayerData": []
+            },
+            "reward": 50
         }
     ],
     "2025-4-16": [
@@ -49,7 +74,7 @@
         {
             "id": "try-all-gadgets",
             "name": "Try all Gadgets",
-            "description": "Try all Gadgets in the game",
+            "description": "Try all Gadgets in the game (Bat, Iron Hand, Bomb, Sticky Bomb, Grappling Hook, Gravity Bubble Gun, Guitar)",
             "goals": {
                 "Statistics": [
                     {
