@@ -1,13 +1,13 @@
 {
     "everyday": [
         {
-            "id": "30-nexium-ore",
-            "name": "Mine 30 Nexium ore",
-            "description": "Use the new hand-drill to mine 30 nexium ores. You can find Nexium ore on astroid nearby",
+            "id": "500-nexium-ore",
+            "name": "Mine 500 Nexium ore",
+            "description": "Use the new hand-drill to mine 500 nexium ores. You can find Nexium ore on astroid nearby",
             "goals": {
                 "Statistics": [
                     {
-                        "DailyNexiumOre": 30
+                        "DailyNexiumOre": 500
                     }
                 ],
                 "PlayerData": []
@@ -49,7 +49,7 @@
         {
             "id": "have-fun",
             "name": "Have fun",
-            "description": "Daily Login - Daily fun. 😊",
+            "description": "Have fun. 😊",
             "goals": {
                 "Statistics": [],
                 "PlayerData": []
