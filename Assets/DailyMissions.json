@@ -1,6 +1,16 @@
 {
     "everyday": [
         {
+            "id": "have-fun",
+            "name": "Have fun",
+            "description": "Have fun. 😊",
+            "goals": {
+                "Statistics": [],
+                "PlayerData": []
+            },
+            "reward": 50
+        },
+        {
             "id": "1000-nexium-ore",
             "name": "Mine 1000 Nexium ore",
             "description": "Use the new hand-drill to mine 1000 nexium ores. You can find Nexium ore on astroid nearby",
@@ -13,6 +23,20 @@
                 "PlayerData": []
             },
             "reward": 100
+        },
+        {
+            "id": "10000-nexium-ore",
+            "name": "Mine 10000 Nexium ore",
+            "description": "Use the new hand-drill to mine 10000 nexium ores. You can find Nexium ore on astroid nearby",
+            "goals": {
+                "Statistics": [
+                    {
+                        "DailyNexiumOre": 10000
+                    }
+                ],
+                "PlayerData": []
+            },
+            "reward": 500
         },
         {
             "id": "try-all-gadgets",
@@ -45,16 +69,6 @@
                 "PlayerData": []
             },
             "reward": 150
-        },
-        {
-            "id": "have-fun",
-            "name": "Have fun",
-            "description": "Have fun. 😊",
-            "goals": {
-                "Statistics": [],
-                "PlayerData": []
-            },
-            "reward": 50
         }
     ]
 }
