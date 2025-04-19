@@ -1,13 +1,13 @@
 {
     "everyday": [
         {
-            "id": "500-nexium-ore",
-            "name": "Mine 500 Nexium ore",
-            "description": "Use the new hand-drill to mine 500 nexium ores. You can find Nexium ore on astroids in space",
+            "id": "30-nexium-ore",
+            "name": "Mine 30 Nexium ore",
+            "description": "Use the new hand-drill to mine 30 nexium ores. You can find Nexium ore on astroid nearby",
             "goals": {
                 "Statistics": [
                     {
-                        "DailyNexiumOre": 500
+                        "DailyNexiumOre": 30
                     }
                 ],
                 "PlayerData": []
@@ -36,7 +36,7 @@
                         "DailyGrapplingHookUsed": 1
                     },
                     {
-                        "DailyGravityBubbleGunUsed": 1
+                        "DailyZeroGBubbleGunUsed": 1
                     },
                     {
                         "DailyGuitarUsed": 1
@@ -44,7 +44,7 @@
                 ],
                 "PlayerData": []
             },
-            "reward": 100
+            "reward": 150
         },
         {
             "id": "have-fun",
@@ -54,10 +54,10 @@
                 "Statistics": [],
                 "PlayerData": []
             },
-            "reward": 25
+            "reward": 50
         }
     ],
-    "2025-3-16": [
+    "2025-4-16": [
         {
             "id": "try-all-edables",
             "name": "Try all edibles",
@@ -73,7 +73,7 @@
             "reward": 100
         }
     ],
-    "2025-3-17": [
+    "2025-4-17": [
         {
             "id": "try-all-gadgets",
             "name": "Try all Gadgets",
@@ -104,7 +104,7 @@
             "reward": 100
         }
     ],
-    "2025-3-18": [
+    "2025-4-18": [
         {
             "id": "explore-all-astroids",
             "name": "Explore all Astroids",
