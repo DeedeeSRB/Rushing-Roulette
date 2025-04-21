@@ -1,71 +1,79 @@
 {
     "everyday": [
         {
-            "id": "have-fun",
-            "name": "Have fun",
-            "description": "Have fun. 😊",
-            "goals": {
-                "Statistics": [],
-                "PlayerData": []
-            },
-            "reward": 50
+        "id": "have-fun",
+        "name": "Have fun",
+        "description": "Have fun. 😊",
+        "goals": {
+            "Statistics": [],
+            "PlayerData": []
         },
-        {
-            "id": "1000-nexium-ore",
-            "name": "Mine 1000 Nexium ore",
-            "description": "Use the new hand-drill to mine 1000 nexium ores. You can find Nexium ore on astroid nearby",
-            "goals": {
-                "Statistics": [
-                    {
-                        "DailyNexiumOre": 1000
-                    }
-                ],
-                "PlayerData": []
-            },
-            "reward": 100
+        "reward": 50
+    },
+    {
+        "id": "1000-nexium-ore",
+        "name": "Mine 1000 Nexium ore",
+        "description": "Use the new hand-drill to mine 1000 nexium ores. You can find Nexium ore on astroid nearby",
+        "goals": {
+            "Statistics": [
+                {
+                    "statisticName": "DailyNexiumOre",
+                    "value": 1000
+                }
+            ],
+            "PlayerData": []
         },
-        {
-            "id": "10000-nexium-ore",
-            "name": "Mine 10000 Nexium ore",
-            "description": "Use the new hand-drill to mine 10000 nexium ores. You can find Nexium ore on astroid nearby",
-            "goals": {
-                "Statistics": [
-                    {
-                        "DailyNexiumOre": 10000
-                    }
-                ],
-                "PlayerData": []
-            },
-            "reward": 500
+        "reward": 100
+    },
+    {
+        "id": "10000-nexium-ore",
+        "name": "Mine 10000 Nexium ore",
+        "description": "Use the new hand-drill to mine 10000 nexium ores. You can find Nexium ore on astroid nearby",
+        "goals": {
+            "Statistics": [
+                {
+                    "statisticName": "DailyNexiumOre",
+                    "value": 10000
+                }
+            ],
+            "PlayerData": []
         },
-        {
-            "id": "try-all-gadgets",
-            "name": "Try all Gadgets",
-            "description": "Try all Gadgets in the game (Bat, Iron Hand, Bomb, Grappling Hook, Gravity Bubble Gun, Guitar)",
-            "goals": {
-                "Statistics": [
-                    {
-                        "DailyBatUsed": 1
-                    },
-                    {
-                        "DailyIronHandUsed": 1
-                    },
-                    {
-                        "DailyBombUsed": 1
-                    },
-                    {
-                        "DailyGrapplingHookUsed": 1
-                    },
-                    {
-                        "DailyZeroGBubbleGunUsed": 1
-                    },
-                    {
-                        "DailyGuitarUsed": 1
-                    }
-                ],
-                "PlayerData": []
-            },
-            "reward": 150
-        }
+        "reward": 500
+    },
+    {
+        "id": "try-all-gadgets",
+        "name": "Try all Gadgets",
+        "description": "Try all Gadgets in the game (Bat, Iron Hand, Bomb, Grappling Hook, Gravity Bubble Gun, Guitar)",
+        "goals": {
+            "Statistics": [
+                {
+                    "statisticName": "DailyBatUsed",
+                    "value": 1
+                },
+                {
+                    "statisticName": "DailyIronHandUsed",
+                    "value": 1
+                },
+                {
+                    "statisticName": "DailyBombUsed",
+                    "value": 1
+                },
+                {
+                    "statisticName": "DailyGrapplingHookUsed",
+                    "value": 1
+                },
+                {
+                    "statisticName": "DailyZeroGBubbleGunUsed",
+                    "value": 1
+                },
+                {
+                    "statisticName": "DailyGuitarUsed",
+                    "value": 1
+                }
+            ],
+            "PlayerData": []
+        },
+        "reward": 150
+    }
     ]
 }
