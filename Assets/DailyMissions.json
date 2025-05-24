@@ -55,10 +55,6 @@
                     "value": 1
                 },
                 {
-                    "statisticName": "DailyExplosiveBombUsed",
-                    "value": 1
-                },
-                {
                     "statisticName": "DailyGrapplingHookUsed",
                     "value": 1
                 },
