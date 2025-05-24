@@ -43,7 +43,7 @@
     {
         "id": "try-all-gadgets",
         "name": "Try all Gadgets",
-        "description": "Try all Gadgets in the game (Bat, Iron Hand, Explosive Bomb, Grappling Hook, Gravity Bubble Gun, Guitar)",
+        "description": "Try all Gadgets in the game (Bat, Iron Hand, Grappling Hook, Gravity Bubble Gun, Guitar)",
         "goals": {
             "Statistics": [
                 {
@@ -52,10 +52,6 @@
                 },
                 {
                     "statisticName": "DailyIronHandUsed",
-                    "value": 1
-                },
-                {
-                    "statisticName": "DailyExplosiveBombUsed",
                     "value": 1
                 },
                 {
